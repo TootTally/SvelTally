@@ -3,6 +3,6 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: 'Multicolore';
-    src: url('/Multicolore.otf');
+  font-family: 'Multicolore';
+  src: url('/Multicolore.otf');
 }

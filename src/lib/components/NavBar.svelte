@@ -3,7 +3,7 @@
 </script>
 
 <header class="bg-toot-red text-white">
-  <nav class="max-w-full md:max-w-[80vw] m-auto flex gap-4 p-2">
+  <nav class="m-auto flex max-w-full gap-4 p-2 md:max-w-[80vw]">
     <a href="/static"><img class="h-6" src="/tt_logo.svg" alt="TootTally Logo" /></a>
     <NavBarLink href="/">Home</NavBarLink>
   </nav>

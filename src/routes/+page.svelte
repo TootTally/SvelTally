@@ -15,24 +15,16 @@
 
 <MainLayout>
   {#if $query.isFetching}
-    <p class="text-2xl font-title p-8 text-center">Loading...</p>
+    <p class="p-8 text-center font-title text-2xl">Loading...</p>
   {:else if $query.isError}
-    <p class="text-2xl font-title">Something went wrong! Try again later :]</p>
+    <p class="font-title text-2xl">Something went wrong! Try again later :]</p>
   {:else if $query.isSuccess}
-    <Pagination
-      bind:page={page}
-      bind:pageCount={pageCount}
-      bind:query={query}
-    />
+    <Pagination bind:page bind:pageCount bind:query />
 
     {#if $query.data && $query.data.results.length > 0}
       <Table data={$query.data.results} />
     {/if}
 
-    <Pagination
-      bind:page={page}
-      bind:pageCount={pageCount}
-      bind:query={query}
-    />
+    <Pagination bind:page bind:pageCount bind:query />
   {/if}
 </MainLayout>
