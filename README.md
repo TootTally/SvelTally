@@ -4,7 +4,11 @@ This is the main repo for the new SvelTally website. It is built using SvelteKit
 
 ## Developing
 
-After cloning the repo, run `npm install` (or `pnpm install` or `yarn`), and start a development server:
+After cloning the repo, run `npm install` (or `pnpm install` or `yarn`).
+
+Then, copy the `.env.example` file to `.env` and fill in the values (if needed).
+
+Finally, start a development server:
 
 ```bash
 npm run dev
