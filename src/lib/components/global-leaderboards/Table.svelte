@@ -3,7 +3,7 @@
     username: string;
     tt: number;
     rank: number;
-    picture?: string;
+    picture: string | null;
   }
 
   export let data: TableItem[];
@@ -20,9 +20,10 @@
         </div>
         <div class="w-1/12 flex justify-center">
           {#if user.picture}
-            <img class="h-6" src="{user.picture}" alt="Profile Picture" />
+            <img class="h-6" src="{user.picture}" alt="{`${user.username}'s avatar`}" />
           {:else}
-            <img class="h-8 w-8 p-1 rounded-full border border-gray-900" src="/tt_logo.svg" alt="Profile Picture" />
+            <img class="h-8 w-8 p-1 rounded-full border border-gray-900" src="/tt_logo.svg"
+                 alt="{`${user.username}'s avatar`}" />
           {/if}
         </div>
         <div class="text-center w-8/12">
