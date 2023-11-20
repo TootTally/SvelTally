@@ -15,12 +15,12 @@ type LeaderboardResponse = {
   }[];
 };
 
-const fetchLeaderboards = async ({ pageParam = 1 }) => {
-  return fetch(`${PUBLIC_API_URL}/globalleaderboard/?page=${pageParam}`).then((res) => res.json());
+const fetchLeaderboards = async ({ page = 1 }) => {
+  return fetch(`${PUBLIC_API_URL}/globalleaderboard/?page=${page}`).then((res) => res.json());
 };
 
-export const globalLeaderboardsQuery = ({ pageParam = 1 }) =>
+export const globalLeaderboardsQuery = ({ page = 1 }) =>
   createQuery<LeaderboardResponse>({
     queryKey: ['leaderboards'],
-    queryFn: () => fetchLeaderboards({ pageParam })
+    queryFn: () => fetchLeaderboards({ page })
   });
