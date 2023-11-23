@@ -17,7 +17,7 @@
   {#if $query.isFetching}
     <p class="p-8 text-center font-title text-2xl">Loading...</p>
   {:else if $query.isError}
-    <p class="font-title text-2xl">Something went wrong! Try again later :]</p>
+    <p class="p-8 text-center font-title text-2xl">Something went wrong! Try again later :]</p>
   {:else if $query.isSuccess}
     <Pagination bind:page bind:pageCount bind:query />
 
