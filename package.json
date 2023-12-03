@@ -28,8 +28,5 @@
     "typescript": "^5.3.2",
     "vite": "^4.5.0"
   },
-  "type": "module",
-  "dependencies": {
-    "@tanstack/svelte-query": "^5.12.1"
-  }
+  "type": "module"
 }
