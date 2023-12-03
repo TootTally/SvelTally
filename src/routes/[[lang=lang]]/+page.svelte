@@ -4,6 +4,7 @@
   import MainLayout from '$lib/components/MainLayout.svelte';
   import Pagination from '$lib/components/Pagination.svelte';
   import Table from '$lib/components/global-leaderboards/Table.svelte';
+  import * as m from '$paraglide/messages';
 
   let page = 1;
 
@@ -11,13 +12,13 @@
   $: pageCount = $query.data ? $query.data.count / 50 : 1;
 </script>
 
-<Hero title="Global Leaderboards" />
+<Hero title={m.global_leaderboards()} />
 
 <MainLayout>
   {#if $query.isFetching}
-    <p class="p-8 text-center font-title text-2xl">Loading...</p>
+    <p class="p-8 text-center font-title text-2xl">{m.loading()}</p>
   {:else if $query.isError}
-    <p class="p-8 text-center font-title text-2xl">Something went wrong! Try again later :]</p>
+    <p class="p-8 text-center font-title text-2xl">{m.generic_error()}</p>
   {:else if $query.isSuccess}
     <Pagination bind:page bind:pageCount bind:query />
 
