@@ -1,6 +1,5 @@
 <script lang="ts">
   import '../app.css';
-  import { QueryClient, QueryClientProvider } from '@tanstack/svelte-query';
   import NavBar from '$lib/components/NavBar.svelte';
   import { browser } from '$app/environment';
   import { page } from '$app/stores';
@@ -14,7 +13,6 @@
   import { goto } from '$app/navigation';
   import { writable } from 'svelte/store';
 
-  const queryClient = new QueryClient();
   const preferredLanguage = writable(localStorage.getItem('lang') as AvailableLanguageTag | null);
 
   onSetLanguageTag((newLanguageTag) => {
@@ -43,9 +41,7 @@
 
 <ParaglideMetaTags />
 
-<QueryClientProvider client={queryClient}>
-  <NavBar />
-  {#key lang}
-    <slot />
-  {/key}
-</QueryClientProvider>
+<NavBar />
+{#key lang}
+  <slot />
+{/key}
