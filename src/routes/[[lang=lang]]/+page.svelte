@@ -1,31 +1,37 @@
 <script lang="ts">
-  import { globalLeaderboardsQuery } from '$lib/api/globalLeaderboards';
   import Hero from '$lib/components/Hero.svelte';
   import MainLayout from '$lib/components/MainLayout.svelte';
   import Pagination from '$lib/components/Pagination.svelte';
   import Table from '$lib/components/global-leaderboards/Table.svelte';
   import * as m from '$paraglide/messages';
 
-  let page = 1;
+  import type { PageData } from './$types';
 
-  $: query = globalLeaderboardsQuery({ page });
-  $: pageCount = $query.data ? $query.data.count / 50 : 1;
+  export let data: PageData;
 </script>
 
 <Hero title={m.global_leaderboards()} />
 
 <MainLayout>
-  {#if $query.isFetching}
+  {#await data.promise.query}
     <p class="p-8 text-center font-title text-2xl">{m.loading()}</p>
-  {:else if $query.isError}
-    <p class="p-8 text-center font-title text-2xl">{m.generic_error()}</p>
-  {:else if $query.isSuccess}
-    <Pagination bind:page bind:pageCount bind:query />
+  {:then resolvedData}
+    <Pagination
+      bind:currentPage={data.page}
+      next={resolvedData.next}
+      previous={resolvedData.previous}
+      pageCount={resolvedData.count ? Math.ceil(resolvedData.count / 50) : 1}
+    />
 
-    {#if $query.data && $query.data.results.length > 0}
-      <Table data={$query.data.results} />
+    {#if resolvedData.results?.length > 0}
+      <Table data={resolvedData.results} />
     {/if}
 
-    <Pagination bind:page bind:pageCount bind:query />
-  {/if}
+    <Pagination
+      bind:currentPage={data.page}
+      next={resolvedData.next}
+      previous={resolvedData.previous}
+      pageCount={resolvedData.count ? Math.ceil(resolvedData.count / 50) : 1}
+    />
+  {/await}
 </MainLayout>

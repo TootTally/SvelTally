@@ -1,49 +1,50 @@
 <script lang="ts">
-  export let page = 1;
+  export let currentPage = 1;
   export let pageCount = 1;
-  export let query;
+  export let next: string | null = '';
+  export let previous: string | null = '';
 </script>
 
 <div class="my-4 flex justify-center">
-  <button
+  <a
+    href="/?page=1"
     class="rounded-bl-lg rounded-tl-lg bg-gray-900 p-4 font-title text-2xl text-white hover:underline dark:bg-white dark:text-gray-900"
-    on:click={() => (page = 1)}
-    class:pointer-events-none={page === 1}
-    class:disabled={page === 1}
-    disabled={page === 1}
+    class:pointer-events-none={currentPage === 1}
+    class:disabled={currentPage === 1}
     >&lt;&lt;
-  </button>
-  <button
+  </a>
+  <a
+    href="/?page={currentPage - 1}"
     class="bg-gray-900 p-4 font-title text-2xl text-white hover:underline dark:bg-white dark:text-gray-900"
-    on:click={() => (page -= 1)}
-    class:pointer-events-none={!$query.data?.previous}
-    class:disabled={!$query.data?.previous}
-    disabled={!$query.data?.previous}
+    class:pointer-events-none={!previous}
+    class:disabled={!previous}
     >&lt;
-  </button>
+  </a>
   {#each Array.from({ length: pageCount }) as _, i}
-    <button
+    <a
+      href="/?page={i + 1}"
       class="bg-gray-900 p-4 font-title text-2xl leading-none text-white hover:underline dark:bg-white dark:text-gray-900"
-      class:underline={page === i + 1}
-      on:click={() => (page = i + 1)}>{i + 1}</button
+      class:underline={currentPage === i + 1}
+      on:click={() => (currentPage = i + 1)}
     >
+      {i + 1}
+    </a>
   {/each}
-  <button
+  <a
+    href="/?page={currentPage + 1}"
     class="bg-gray-900 p-4 font-title text-2xl text-white hover:underline dark:bg-white dark:text-gray-900"
-    class:pointer-events-none={!$query.data?.next}
-    class:disabled={!$query.data?.next}
-    on:click={() => (page += 1)}
-    disabled={!$query.data?.next}
+    class:pointer-events-none={!next}
+    class:disabled={!next}
     >&gt;
-  </button>
-  <button
+  </a>
+  <a
+    href="/?page={pageCount}"
     class="rounded-br-lg rounded-tr-lg bg-gray-900 p-4 font-title text-2xl text-white hover:underline dark:bg-white dark:text-gray-900"
-    class:pointer-events-none={page === pageCount}
-    class:disabled={page === pageCount}
-    on:click={() => (page = pageCount)}
-    disabled={page === pageCount}
+    class:pointer-events-none={currentPage === pageCount}
+    class:disabled={currentPage === pageCount}
+    on:click={() => (currentPage = pageCount)}
     >&gt;&gt;
-  </button>
+  </a>
 </div>
 
 <style>
