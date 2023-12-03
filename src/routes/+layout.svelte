@@ -18,8 +18,9 @@
   onSetLanguageTag((newLanguageTag) => {
     localStorage.setItem('lang', newLanguageTag);
     $preferredLanguage = newLanguageTag;
+
     if ($page.params.lang !== newLanguageTag) {
-      goto(`/${newLanguageTag}${$page.url.pathname.slice(3)}`);
+      goto(`/${newLanguageTag}${$page.url.pathname.slice(3)}${$page.url.search}`);
     }
   });
 
