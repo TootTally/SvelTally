@@ -6,7 +6,7 @@
 <script lang="ts">
   import { page } from '$app/stores';
   import { availableLanguageTags } from '$paraglide/runtime';
-  import { translatePath } from './index.ts';
+  import { translatePath } from './utils.ts';
 </script>
 
 <svelte:head>
