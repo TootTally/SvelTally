@@ -24,6 +24,7 @@ export type BadgeInfo = {
   image: string;
   image_2x: string;
   image_4x: string;
+  badge_type: BadgeType;
 };
 
 export enum Status {
@@ -41,4 +42,9 @@ export enum AccountStanding {
   GOOD = "Good Standing",
   RESTRICTED = "Restricted",
   BANNED = "Banned",
+}
+
+export enum BadgeType {
+  PLAYER = 0,
+  CHARTER = 1,
 }
