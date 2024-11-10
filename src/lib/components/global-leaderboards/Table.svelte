@@ -10,8 +10,12 @@
     id: number;
   };
 
-  export let data: TableItem[];
-  export let lang: string = "en";
+  interface Props {
+    data: TableItem[];
+    lang?: string;
+  }
+
+  let { data, lang = "en" }: Props = $props();
 </script>
 
 <div class="rounded border border-gray-800 bg-toot-red p-2 text-white">

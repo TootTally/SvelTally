@@ -3,7 +3,11 @@
   import { getFlagEmoji } from "$lib/utils/flags";
   import Badge from "./Badge.svelte";
 
-  export let user: ProfileBaseResponse;
+  interface Props {
+    user: ProfileBaseResponse;
+  }
+
+  let { user }: Props = $props();
 </script>
 
 <div class="rounded border border-gray-800 bg-toot-red p-2 text-white">
