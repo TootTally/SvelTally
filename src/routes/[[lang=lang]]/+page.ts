@@ -15,12 +15,16 @@ type LeaderboardResponse = {
   }[];
 };
 
-export const load: PageLoad = ({ url, fetch }) => {
-  const params = url.searchParams;
-  const page = params.get('page') ? Number(params.get('page')) : 1;
+export const load: PageLoad = ({ url, fetch, params }) => {
+  const urlParams = url.searchParams;
+  const page = urlParams.get('page') ? Number(urlParams.get('page')) : 1;
   const query: Promise<LeaderboardResponse> = fetch(
     `${PUBLIC_API_URL}/globalleaderboard/?page=${page}`
   ).then((res) => res.json());
 
-  return { page, promise: { query } };
+  return {
+    page: page,
+    lang: params.lang,
+    promise: { query },
+  };
 };

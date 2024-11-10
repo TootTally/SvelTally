@@ -16,17 +16,15 @@
     <ProfileHeader user={resolvedData[0]}/>
 
     <hr/>
-    {#if resolvedData[2].count > 0}
-      <PlayTable plays={resolvedData[2].results}/>
-    {:else}
-      <p>No plays found.</p>
-    {/if}
+    <PlayTable
+      tableName={m.best_plays()}
+      plays={resolvedData[2].results}
+    />
     
     <hr/>
-    {#if resolvedData[1].count > 0}
-      <PlayTable plays={resolvedData[1].results}/>
-    {:else}
-      <p>No plays found.</p>
-    {/if}
+    <PlayTable
+      tableName={m.recent_plays()}
+      plays={resolvedData[1].results}
+    />
   {/await}
 </MainLayout>

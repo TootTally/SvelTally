@@ -1,15 +1,7 @@
 <script lang="ts">
   import type { ProfileBaseResponse } from "$lib/types/profile";
+  import { getFlagEmoji } from "$lib/utils/flags";
   import Badge from "./Badge.svelte";
-
-  // Code taken from https://dev.to/jorik/country-code-to-flag-emoji-a21
-  function getFlagEmoji(countryCode: string) {
-    const codePoints = countryCode
-      .toUpperCase()
-      .split('')
-      .map(char =>  127397 + char.charCodeAt(0));
-    return String.fromCodePoint(...codePoints);
-  }
 
   export let user: ProfileBaseResponse;
 </script>

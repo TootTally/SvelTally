@@ -3,5 +3,8 @@
   "generic_error": "Something went wrong! Try again later :]",
 
   "global_leaderboards": "Global Leaderboards",
-  "profile": "Profile"
+  "profile": "Profile",
+
+  "best_plays": "Best Plays",
+  "recent_plays": "Recent Plays"
 }

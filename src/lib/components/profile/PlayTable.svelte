@@ -2,9 +2,13 @@
   import type { ProfileScore } from '$lib/types/score';
 
   export let plays: ProfileScore[];
+  export let tableName: string;
 </script>
 
+<!-- TODO: Paginate play table data -->
+
 <div class="rounded border border-gray-800 bg-toot-red p-2 text-white">
+  <p class="m-2 p-2 text-2xl font-bold">{tableName}</p>
   {#if plays.length > 0}
     {#each plays as play}
       <div
@@ -33,7 +37,7 @@
       </div>
     {/each}
   {:else}
-    <p class="p-6 text-center font-title text-2xl">Loading...</p>
+    <p class="p-6 text-center font-title text-2xl">No plays found!</p>
   {/if}
 </div>
 

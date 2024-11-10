@@ -16,5 +16,10 @@ export const load: PageLoad = ({ params, fetch }) => {
     `${PUBLIC_API_URL}/profile/${params.id}/best_scores/`
   ).then((res) => res.json());
 
-  return { promises: { query: Promise.all([profile, recentScores, bestScores]) } };
+  return {
+    promises: {
+      query: Promise.all([profile, recentScores, bestScores]) 
+    },
+    lang: params.lang,
+  };
 };

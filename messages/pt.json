@@ -3,5 +3,8 @@
   "generic_error": "Desculpe, algo deu errado. Por favor, tente novamente mais tarde. :]",
 
   "global_leaderboards": "Ranking mundial",
-  "profile": "Perfil"
+  "profile": "Perfil",
+
+  "best_plays": "Melhores Peças",
+  "recent_plays": "Peças Recentes"
 }
