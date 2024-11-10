@@ -1,8 +1,12 @@
 <script lang="ts">
   import type { ProfileScore } from '$lib/types/score';
 
-  export let plays: ProfileScore[];
-  export let tableName: string;
+  interface Props {
+    plays: ProfileScore[];
+    tableName: string;
+  }
+
+  let { plays, tableName }: Props = $props();
 </script>
 
 <!-- TODO: Paginate play table data -->

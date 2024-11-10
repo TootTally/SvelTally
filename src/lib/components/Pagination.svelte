@@ -1,8 +1,17 @@
 <script lang="ts">
-  export let currentPage = 1;
-  export let pageCount = 1;
-  export let next: string | null = '';
-  export let previous: string | null = '';
+  interface Props {
+    currentPage?: number;
+    pageCount?: number;
+    next?: string | null;
+    previous?: string | null;
+  }
+
+  let {
+    currentPage = $bindable(1),
+    pageCount = 1,
+    next = '',
+    previous = ''
+  }: Props = $props();
 </script>
 
 <div class="my-4 flex justify-center">

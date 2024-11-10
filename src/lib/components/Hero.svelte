@@ -1,5 +1,9 @@
 <script lang="ts">
-  export let title: string;
+  interface Props {
+    title: string;
+  }
+
+  let { title }: Props = $props();
 </script>
 
 <div class="flex bg-gradient-to-br from-blue-600 to-pink-700 py-16">
@@ -9,13 +13,13 @@
     <h1
       class="relative z-10 inline-block px-5 pb-2 pt-4 text-center font-title text-5xl leading-none text-black md:ml-5"
     >
-      <span class="bg" />
+      <span class="bg"></span>
       {title}
     </h1>
   </div>
 </div>
 
-<style>
+<style lang="postcss">
   .font-title {
     text-shadow:
       3px 0 #fff,

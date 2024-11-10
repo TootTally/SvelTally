@@ -12,6 +12,12 @@
   import ParaglideMetaTags from '$lib/i18n/ParaglideMetaTags.svelte';
   import { goto } from '$app/navigation';
   import { writable } from 'svelte/store';
+  import { onMount } from 'svelte';
+  interface Props {
+    children?: import('svelte').Snippet;
+  }
+
+  let { children }: Props = $props();
 
   const preferredLanguage = writable(localStorage.getItem('lang') as AvailableLanguageTag | null);
 
@@ -25,24 +31,24 @@
   });
 
   //Determine the current language from the URL. Fall back to the source language if none is specified.
-  $: lang = $preferredLanguage
+  let lang = $derived($preferredLanguage
     ? $preferredLanguage
-    : ($page.params.lang as AvailableLanguageTag) ?? sourceLanguageTag;
+    : ($page.params.lang as AvailableLanguageTag) ?? sourceLanguageTag);
 
   //Set the language tag in the Paraglide runtime.
   //This determines which language the strings are translated to.
   //You should only do this in the template, to avoid concurrent requests interfering with each other.
-  $: setLanguageTag(lang);
-
-  //Keep the <html> lang and dir attributes in sync with the current language
-  $: if (browser) {
-    document.documentElement.lang = lang;
-  }
+  onMount(() => {
+    setLanguageTag(lang);
+    if (browser) {
+      document.documentElement.lang = lang;
+    }
+  });
 </script>
 
 <ParaglideMetaTags />
 
 <NavBar />
 {#key lang}
-  <slot />
+  {@render children?.()}
 {/key}
