@@ -2,5 +2,9 @@
   "loading": "Loading...",
   "generic_error": "Something went wrong! Try again later :]",
 
-  "global_leaderboards": "Global Leaderboards"
+  "global_leaderboards": "Global Leaderboards",
+  "profile": "Profile",
+
+  "best_plays": "Best Plays",
+  "recent_plays": "Recent Plays"
 }
