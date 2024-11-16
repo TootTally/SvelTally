@@ -15,7 +15,7 @@ type LeaderboardResponse = {
   }[];
 };
 
-export const load: PageLoad = ({ url, fetch, params }) => {
+export const load: PageLoad = ({ url, fetch }) => {
   const urlParams = url.searchParams;
   const page = urlParams.get('page') ? Number(urlParams.get('page')) : 1;
   const query: Promise<LeaderboardResponse> = fetch(
@@ -24,7 +24,6 @@ export const load: PageLoad = ({ url, fetch, params }) => {
 
   return {
     page: page,
-    lang: params.lang,
     promise: { query },
   };
 };

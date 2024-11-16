@@ -1,5 +1,6 @@
 <script lang="ts">
   import { getFlagEmoji } from "$lib/utils/flags";
+  import { languageTag } from "$paraglide/runtime.js"
 
   type TableItem = {
     username: string;
@@ -10,12 +11,7 @@
     id: number;
   };
 
-  interface Props {
-    data: TableItem[];
-    lang?: string;
-  }
-
-  let { data, lang = "en" }: Props = $props();
+  export let data: TableItem[];
 </script>
 
 <div class="rounded border border-gray-800 bg-toot-red p-2 text-white">
@@ -43,7 +39,7 @@
           {/if}
         </div>
         <div class="flex w-7/12 justify-center place-content-center">
-          <a class="place-self-center" href="/{lang}/profile/{user.id}">
+          <a class="place-self-center" href="/{languageTag()}/profile/{user.id}">
             <p class="overflow-hidden overflow-ellipsis px-2">{user.username}</p>
           </a>
         </div>

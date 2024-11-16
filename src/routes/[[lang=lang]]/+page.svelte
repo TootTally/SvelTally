@@ -28,10 +28,7 @@
     />
 
     {#if resolvedData.results?.length > 0}
-      <Table
-        data={resolvedData.results}
-        lang={data.lang ?? "en"}
-      />
+      <Table data={resolvedData.results} />
     {/if}
 
     <Pagination
