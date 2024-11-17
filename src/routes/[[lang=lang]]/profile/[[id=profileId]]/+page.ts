@@ -18,8 +18,8 @@ export const load: PageLoad = ({ params, fetch }) => {
 
   return {
     promises: {
-      query: Promise.all([profile, recentScores, bestScores]) 
+      query: Promise.all([profile, recentScores, bestScores])
     },
-    lang: params.lang,
+    lang: params.lang
   };
 };

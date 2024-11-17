@@ -7,7 +7,11 @@
 
   import type { PageData } from './$types';
 
-  export let data: PageData;
+  interface Props {
+    data: PageData;
+  }
+
+  let { data }: Props = $props();
 </script>
 
 <Hero title={m.global_leaderboards()} />
@@ -17,7 +21,7 @@
     <p class="p-8 text-center font-title text-2xl">{m.loading()}</p>
   {:then resolvedData}
     <Pagination
-      bind:currentPage={data.page}
+      currentPage={data.page}
       next={resolvedData.next}
       previous={resolvedData.previous}
       pageCount={resolvedData.count ? Math.ceil(resolvedData.count / 50) : 1}
@@ -28,7 +32,7 @@
     {/if}
 
     <Pagination
-      bind:currentPage={data.page}
+      currentPage={data.page}
       next={resolvedData.next}
       previous={resolvedData.previous}
       pageCount={resolvedData.count ? Math.ceil(resolvedData.count / 50) : 1}

@@ -1,8 +1,12 @@
 <script lang="ts">
   import type { ProfileScore } from '$lib/types/score';
 
-  export let plays: ProfileScore[];
-  export let tableName: string;
+  interface Props {
+    plays: ProfileScore[];
+    tableName: string;
+  }
+
+  let { plays, tableName }: Props = $props();
 </script>
 
 <!-- TODO: Paginate play table data -->
@@ -12,7 +16,7 @@
   {#if plays.length > 0}
     {#each plays as play}
       <div
-        class="my-4 flex rounded border border-gray-800 bg-toot-pale-red p-5 text-center text-xl drop-shadow-lg align-middle place-items-center"
+        class="my-4 flex place-items-center rounded border border-gray-800 bg-toot-pale-red p-5 text-center align-middle text-xl drop-shadow-lg"
       >
         <div class="w-1/12 text-center">
           <p>{play.grade}</p>
@@ -40,4 +44,3 @@
     <p class="p-6 text-center font-title text-2xl">No plays found!</p>
   {/if}
 </div>
-

@@ -1,8 +1,8 @@
 <script lang="ts">
-  import type { ProfileBaseResponse } from "$lib/types/profile";
-  import { getFlagEmoji } from "$lib/utils/flags";
+  // import type { ProfileBaseResponse } from "$lib/types/profile";
+  // import { getFlagEmoji } from "$lib/utils/flags";
 
-  export let user: ProfileBaseResponse;
+  // export let user: ProfileBaseResponse;
 </script>
 
 <div>

@@ -27,5 +27,5 @@ export type SongInfo = {
   speed_acc: number[];
   song_length: number;
   note_count: number;
-  status: "WORK_IN_PROGRESS" | "UNRATED" | "REQUEST_REVIEW" | "RATED" | "LOVED";
-}
+  status: 'WORK_IN_PROGRESS' | 'UNRATED' | 'REQUEST_REVIEW' | 'RATED' | 'LOVED';
+};
