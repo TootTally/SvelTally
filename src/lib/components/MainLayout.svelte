@@ -5,7 +5,6 @@
 
   let { children }: Props = $props();
   const children_render = $derived(children);
-
 </script>
 
 <main class="m-auto w-full p-2 md:w-[80vw]">

@@ -3,7 +3,7 @@ export type APIScoreResponse = {
   next: string;
   previous: string;
   results: ProfileScore[];
-}
+};
 
 export type ProfileScore = {
   score: number;
@@ -11,7 +11,7 @@ export type ProfileScore = {
   player: string;
   played_on: string;
   tt: number;
-  grade: "S" | "A" | "B" | "C" | "D" | "F";
+  grade: 'S' | 'A' | 'B' | 'C' | 'D' | 'F';
   perfect: number;
   nice: number;
   okay: number;
@@ -30,14 +30,14 @@ export type ProfileScore = {
   replay_speed: number;
   difficulty: number;
   modifiers: Modifier[] | null;
-}
+};
 
 export type SongLeaderboardScoreResponse = {
   score: number;
   player_id: number;
   player: string;
   played_on: string;
-  grade: "S" | "A" | "B" | "C" | "D" | "F";
+  grade: 'S' | 'A' | 'B' | 'C' | 'D' | 'F';
   perfect: number;
   nice: number;
   okay: number;
@@ -52,15 +52,15 @@ export type SongLeaderboardScoreResponse = {
   replay_speed: number;
   difficulty: number;
   modifiers: Modifier[] | null;
-}
+};
 
 export enum Modifier {
-  HIDDEN = "HD",
-  FLASHLIGHT = "FL",
-  BRUTAL = "BT",
-  INSTAFAIL = "IF",
-  EASY = "EZ",
-  STRICT = "ST",
-  AUTOTUNE = "AT",
-  HIDDEN_CURSOR = "HC",
+  HIDDEN = 'HD',
+  FLASHLIGHT = 'FL',
+  BRUTAL = 'BT',
+  INSTAFAIL = 'IF',
+  EASY = 'EZ',
+  STRICT = 'ST',
+  AUTOTUNE = 'AT',
+  HIDDEN_CURSOR = 'HC'
 }

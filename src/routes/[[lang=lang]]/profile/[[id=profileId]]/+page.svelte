@@ -17,18 +17,12 @@
   {#await data.promises.query}
     <p class="p-8 text-center font-title text-2xl">{m.loading()}</p>
   {:then resolvedData}
-    <ProfileHeader user={resolvedData[0]}/>
+    <ProfileHeader user={resolvedData[0]} />
 
-    <hr/>
-    <PlayTable
-      tableName={m.best_plays()}
-      plays={resolvedData[2].results}
-    />
-    
-    <hr/>
-    <PlayTable
-      tableName={m.recent_plays()}
-      plays={resolvedData[1].results}
-    />
+    <hr />
+    <PlayTable tableName={m.best_plays()} plays={resolvedData[2].results} />
+
+    <hr />
+    <PlayTable tableName={m.recent_plays()} plays={resolvedData[1].results} />
   {/await}
 </MainLayout>

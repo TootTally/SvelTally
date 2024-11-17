@@ -24,6 +24,6 @@ export const load: PageLoad = ({ url, fetch }) => {
 
   return {
     page: page,
-    promise: { query },
+    promise: { query }
   };
 };

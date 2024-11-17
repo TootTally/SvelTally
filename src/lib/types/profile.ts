@@ -1,4 +1,4 @@
-import type { SongInfo } from "./song";
+import type { SongInfo } from './song';
 
 export type ProfileBaseResponse = {
   id: number;
@@ -28,23 +28,23 @@ export type BadgeInfo = {
 };
 
 export enum Status {
-  OFFLINE = "Offline",
-  ONLINE = "Online",
-  IDLE = "Idle",
-  MAIN_MENU = "Main Menu",
-  BROWSING_SONGS = "Browsing Songs",
-  PLAYING = "Playing",
-  WATCHING_REPLAY = "Watching Replay",
-  SPECTATING = "Spectating",
-};
+  OFFLINE = 'Offline',
+  ONLINE = 'Online',
+  IDLE = 'Idle',
+  MAIN_MENU = 'Main Menu',
+  BROWSING_SONGS = 'Browsing Songs',
+  PLAYING = 'Playing',
+  WATCHING_REPLAY = 'Watching Replay',
+  SPECTATING = 'Spectating'
+}
 
 export enum AccountStanding {
-  GOOD = "Good Standing",
-  RESTRICTED = "Restricted",
-  BANNED = "Banned",
+  GOOD = 'Good Standing',
+  RESTRICTED = 'Restricted',
+  BANNED = 'Banned'
 }
 
 export enum BadgeType {
   PLAYER = 0,
-  CHARTER = 1,
+  CHARTER = 1
 }

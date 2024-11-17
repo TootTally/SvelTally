@@ -31,9 +31,11 @@
   });
 
   //Determine the current language from the URL. Fall back to the source language if none is specified.
-  let lang = $derived($preferredLanguage
-    ? $preferredLanguage
-    : ($page.params.lang as AvailableLanguageTag) ?? sourceLanguageTag);
+  let lang = $derived(
+    $preferredLanguage
+      ? $preferredLanguage
+      : (($page.params.lang as AvailableLanguageTag) ?? sourceLanguageTag)
+  );
 
   //Set the language tag in the Paraglide runtime.
   //This determines which language the strings are translated to.

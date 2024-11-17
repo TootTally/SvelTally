@@ -6,12 +6,7 @@
     previous?: string | null;
   }
 
-  let {
-    currentPage = $bindable(1),
-    pageCount = 1,
-    next = '',
-    previous = ''
-  }: Props = $props();
+  let { currentPage = $bindable(1), pageCount = 1, next = '', previous = '' }: Props = $props();
 </script>
 
 <div class="my-4 flex justify-center">
@@ -40,9 +35,15 @@
           {i + 1}
         </a>
       {/each}
-      <span class="bg-gray-900 p-4 font-title text-2xl leading-none text-white dark:bg-white dark:text-gray-900">...</span>
+      <span
+        class="bg-gray-900 p-4 font-title text-2xl leading-none text-white dark:bg-white dark:text-gray-900"
+        >...</span
+      >
     {:else if currentPage >= pageCount - 2}
-      <span class="bg-gray-900 p-4 font-title text-2xl leading-none text-white dark:bg-white dark:text-gray-900">...</span>
+      <span
+        class="bg-gray-900 p-4 font-title text-2xl leading-none text-white dark:bg-white dark:text-gray-900"
+        >...</span
+      >
       {#each Array.from({ length: 5 }) as _, i}
         <a
           href="?page={pageCount - 4 + i}"
@@ -53,7 +54,10 @@
         </a>
       {/each}
     {:else}
-      <span class="bg-gray-900 p-4 font-title text-2xl leading-none text-white dark:bg-white dark:text-gray-900">...</span>
+      <span
+        class="bg-gray-900 p-4 font-title text-2xl leading-none text-white dark:bg-white dark:text-gray-900"
+        >...</span
+      >
       {#each Array.from({ length: 5 }) as _, i}
         <a
           href="?page={currentPage - 2 + i}"
@@ -63,7 +67,10 @@
           {currentPage - 2 + i}
         </a>
       {/each}
-      <span class="bg-gray-900 p-4 font-title text-2xl leading-none text-white dark:bg-white dark:text-gray-900">...</span>
+      <span
+        class="bg-gray-900 p-4 font-title text-2xl leading-none text-white dark:bg-white dark:text-gray-900"
+        >...</span
+      >
     {/if}
   {:else}
     {#each Array.from({ length: pageCount }) as _, i}

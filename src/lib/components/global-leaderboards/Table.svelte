@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { getFlagEmoji } from "$lib/utils/flags";
-  import { languageTag } from "$paraglide/runtime.js"
+  import { getFlagEmoji } from '$lib/utils/flags';
+  import { languageTag } from '$paraglide/runtime.js';
 
   type TableItem = {
     username: string;
@@ -21,29 +21,33 @@
       <div
         class="my-4 flex rounded border border-gray-800 bg-toot-pale-red p-5 text-center text-xl font-bold drop-shadow-lg"
       >
-        <div class="flex w-1/12 justify-center place-content-center">
+        <div class="flex w-1/12 place-content-center justify-center">
           <p class="place-self-center">#{user.rank}</p>
         </div>
-        <div class="flex w-1/12 justify-center place-content-center">
-          <p class="text-2xl place-self-center">{getFlagEmoji(user.country)}</p>
+        <div class="flex w-1/12 place-content-center justify-center">
+          <p class="place-self-center text-2xl">{getFlagEmoji(user.country)}</p>
         </div>
-        <div class="flex w-1/12 justify-center place-content-center">
+        <div class="flex w-1/12 place-content-center justify-center">
           {#if user.picture}
-            <img class="h-10 w-10 object-contain rounded-full p-1" src={user.picture} alt={`${user.username}'s avatar`} />
+            <img
+              class="h-10 w-10 rounded-full object-contain p-1"
+              src={user.picture}
+              alt={`${user.username}'s avatar`}
+            />
           {:else}
             <img
-              class="h-10 w-10 object-contain rounded-full p-1"
+              class="h-10 w-10 rounded-full object-contain p-1"
               src="/tt_logo.svg"
               alt={`${user.username}'s avatar`}
             />
           {/if}
         </div>
-        <div class="flex w-7/12 justify-center place-content-center">
+        <div class="flex w-7/12 place-content-center justify-center">
           <a class="place-self-center" href="/{languageTag()}/profile/{user.id}">
             <p class="overflow-hidden overflow-ellipsis px-2">{user.username}</p>
           </a>
         </div>
-        <div class="flex w-2/12 justify-center place-content-center">
+        <div class="flex w-2/12 place-content-center justify-center">
           <p class="place-self-center">{user.tt.toFixed(2)}tt</p>
         </div>
       </div>
