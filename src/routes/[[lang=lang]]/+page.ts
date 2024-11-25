@@ -1,19 +1,6 @@
 import type { PageLoad } from './$types';
 import { PUBLIC_API_URL } from '$env/static/public';
-
-type LeaderboardResponse = {
-  count: number;
-  next: string | null;
-  previous: string | null;
-  results: {
-    id: number;
-    username: string;
-    tt: number;
-    rank: number;
-    country: string;
-    picture: string | null;
-  }[];
-};
+import { LeaderboardResponse } from '$lib/types/leaderboard';
 
 export const load: PageLoad = ({ url, fetch }) => {
   const urlParams = url.searchParams;
