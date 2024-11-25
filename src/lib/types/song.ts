@@ -5,7 +5,7 @@ export type SongInfo = {
   track_ref: string;
   note_hash: string;
   file_hash: string;
-  alt_downloads: string[];
+  alt_downloads: AltDownload[];
   difficulty: number;
   tap: number;
   aim: number;
@@ -29,3 +29,9 @@ export type SongInfo = {
   note_count: number;
   status: 'WORK_IN_PROGRESS' | 'UNRATED' | 'REQUEST_REVIEW' | 'RATED' | 'LOVED';
 };
+
+export type AltDownload = {
+  name: string;
+  download: string | null;
+  mirror: string | null;
+}
