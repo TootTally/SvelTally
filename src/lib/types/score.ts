@@ -1,7 +1,7 @@
-export type APIScoreResponse = {
+export type APIProfileScoreResponse = {
   count: number;
-  next: string;
-  previous: string;
+  next: string | null;
+  previous: string | null;
   results: ProfileScore[];
 };
 
@@ -11,7 +11,7 @@ export type ProfileScore = {
   player: string;
   played_on: string;
   tt: number;
-  grade: 'S' | 'A' | 'B' | 'C' | 'D' | 'F';
+  grade: Grade;
   perfect: number;
   nice: number;
   okay: number;
@@ -32,21 +32,28 @@ export type ProfileScore = {
   modifiers: Modifier[] | null;
 };
 
-export type SongLeaderboardScoreResponse = {
+export type APISongLeaderboardResponse = {
+  count: number;
+  next: string | null;
+  previous: string | null;
+  results: SongLeaderboardScore[];
+};
+
+export type SongLeaderboardScore = {
   score: number;
   player_id: number;
   player: string;
-  played_on: string;
-  grade: 'S' | 'A' | 'B' | 'C' | 'D' | 'F';
+  played_on: string; // UTC datetime string
+  grade: Grade;
   perfect: number;
   nice: number;
   okay: number;
   meh: number;
   nasty: number;
   max_combo: number;
-  percentage: number;
+  percentage: number; // 0 - 100
   game_version: string;
-  replay_id: string;
+  replay_id: string; // uuid
   tt: number;
   is_rated: boolean;
   replay_speed: number;
@@ -63,4 +70,15 @@ export enum Modifier {
   STRICT = 'ST',
   AUTOTUNE = 'AT',
   HIDDEN_CURSOR = 'HC'
-}
+};
+
+export enum Grade {
+  SSS = 'SSS',
+  SS = 'SS',
+  S = 'S',
+  A = 'A',
+  B = 'B',
+  C = 'C',
+  D = 'D',
+  F = 'F',
+};

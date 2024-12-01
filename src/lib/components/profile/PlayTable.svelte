@@ -1,5 +1,7 @@
 <script lang="ts">
   import type { ProfileScore } from '$lib/types/score';
+  import { languageTag } from '$paraglide/runtime.js';
+  import ScoreGrade from '../ScoreGrade.svelte';
 
   interface Props {
     plays: ProfileScore[];
@@ -19,7 +21,7 @@
         class="my-4 flex place-items-center rounded border border-gray-800 bg-toot-pale-red p-5 text-center align-middle text-xl drop-shadow-lg"
       >
         <div class="w-1/12 text-center">
-          <p>{play.grade}</p>
+          <ScoreGrade grade={play.grade} />
         </div>
         <div class="w-2/12 text-center">
           <p>{play.score}</p>
@@ -27,8 +29,7 @@
         </div>
         <div class="w-6/12 text-center">
           <p class="overflow-hidden overflow-ellipsis px-2">
-            <!-- TODO: Have this redirect to the SvelTally version of the song page -->
-            <a href="https://toottally.com/song/{play.song_id}/">{play.song_name}</a>
+            <a href="/{languageTag()}/song/{play.song_id}/">{play.song_name}</a>
           </p>
         </div>
         <div class="w-2/12 text-center">

@@ -1,6 +1,6 @@
 import type { SongInfo } from './song';
 
-export type ProfileBaseResponse = {
+export type Profile = {
   id: number;
   username: string;
   rank: number;
