@@ -1,4 +1,4 @@
-export type LeaderboardResponse = {
+export type APILeaderboardResponse = {
   count: number;
   next: string | null;
   previous: string | null;
