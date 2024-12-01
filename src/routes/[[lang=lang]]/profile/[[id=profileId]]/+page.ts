@@ -6,7 +6,11 @@ export const load: PageLoad = ({ params }) => {
 
   if (profileId === 0 || profileId <= 0) {
     console.error("Invalid profile ID");
-    return;
+    return {
+      promises: {
+        query: Promise.all([]),
+      }
+    };
   }
 
   const profile = getProfile(profileId);
@@ -15,7 +19,7 @@ export const load: PageLoad = ({ params }) => {
 
   return {
     promises: {
-      query: Promise.all([profile, recentScores, bestScores])
+      query: Promise.all([profile, recentScores, bestScores]),
     },
     lang: params.lang
   };
