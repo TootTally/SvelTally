@@ -12,7 +12,7 @@ export type SearchFilters = {
   page_size?: number;
 }
 
-export type APISearchResponse = {
+export type APISongSearchResponse = {
   count: number;
   next: string | null;
   previous: string | null;
