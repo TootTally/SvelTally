@@ -36,7 +36,7 @@
 </script>
 
 <header class="bg-toot-red text-white">
-  <nav class="m-auto flex max-w-full items-center justify-between py-2 md:max-w-[80vw]">
+  <nav class="m-auto flex max-w-full items-center justify-between p-2 md:max-w-[80vw]">
     <div class="flex gap-4">
       <a href="/static"><img class="h-6" src="/tt_logo.svg" alt="TootTally Logo" /></a>
       <NavBarLink href="/">Home</NavBarLink>
