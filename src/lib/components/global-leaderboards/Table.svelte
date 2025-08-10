@@ -30,13 +30,13 @@
         <div class="flex w-1/12 place-content-center justify-center">
           {#if user.picture}
             <img
-              class="h-10 w-10 rounded-full object-contain p-1"
+              class="max-h-10 w-10 rounded-full object-cover p-1"
               src={user.picture}
               alt={`${user.username}'s avatar`}
             />
           {:else}
             <img
-              class="h-10 w-10 rounded-full object-contain p-1"
+              class="max-h-10 w-10 rounded-full object-cover p-1"
               src="/tt_logo.svg"
               alt={`${user.username}'s avatar`}
             />

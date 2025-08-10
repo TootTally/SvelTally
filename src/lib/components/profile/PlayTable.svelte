@@ -21,7 +21,7 @@
         <div class="w-1/12 text-center">
           <p>{play.grade}</p>
         </div>
-        <div class="w-2/12 text-center">
+        <div class="w-2/12 text-center text-sm">
           <p>{play.score}</p>
           <p>{play.percentage.toFixed(2)}%</p>
         </div>
@@ -31,11 +31,11 @@
             <a href="https://toottally.com/song/{play.song_id}/">{play.song_name}</a>
           </p>
         </div>
-        <div class="w-2/12 text-center">
+        <div class="w-2/12 text-center text-sm">
           <p>{play.replay_speed.toFixed(2)}x</p>
           <p>{play.modifiers ?? ''}</p>
         </div>
-        <div class="w-1/12 text-center">
+        <div class="w-1/12 text-center text-sm">
           <p>{play.tt.toFixed(2)}tt</p>
         </div>
       </div>
