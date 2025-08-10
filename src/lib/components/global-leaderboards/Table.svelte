@@ -44,7 +44,7 @@
         </div>
         <div class="flex w-7/12 place-content-center justify-center">
           <a class="place-self-center" href="/{getLocale()}/profile/{user.id}">
-            <p class="overflow-hidden overflow-ellipsis px-2">{user.username}</p>
+            <p class="overflow-hidden text-ellipsis px-2">{user.username}</p>
           </a>
         </div>
         <div class="flex w-2/12 place-content-center justify-center">

@@ -26,7 +26,7 @@
           <p>{play.percentage.toFixed(2)}%</p>
         </div>
         <div class="w-6/12 text-center">
-          <p class="overflow-hidden overflow-ellipsis px-2">
+          <p class="overflow-hidden text-ellipsis px-2">
             <!-- TODO: Have this redirect to the SvelTally version of the song page -->
             <a href="https://toottally.com/song/{play.song_id}/">{play.song_name}</a>
           </p>

@@ -13,7 +13,7 @@
   };
 
   let currentLanguage = $state();
-  onMount(() => {
+  $effect(() => {
     currentLanguage = getLocale();
   });
 </script>
