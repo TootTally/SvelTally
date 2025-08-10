@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
 
   interface Props {
     href: string;
@@ -8,7 +8,7 @@
 
   let { href, children }: Props = $props();
 
-  let classes = $derived($page.url.pathname.includes(href) ? 'underline' : '');
+  let classes = $derived(page.url.pathname.includes(href) ? 'underline' : '');
 
   const children_render = $derived(children);
 </script>

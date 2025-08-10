@@ -1,6 +1,6 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import NavBarLink from '$lib/components/NavBarLink.svelte';
   import { type Locale, getLocale, setLocale, locales } from '$lib/paraglide/runtime.js';
   import { onMount } from 'svelte';
@@ -9,7 +9,7 @@
     const newLanguageTag = (event.target as HTMLSelectElement)
       .value as Locale;
     setLocale(newLanguageTag);
-    goto(`/${newLanguageTag}${$page.url.pathname.slice(3)}`);
+    goto(`/${newLanguageTag}${page.url.pathname.slice(3)}`);
   };
 
   let currentLanguage = $state();
