@@ -11,12 +11,12 @@
 
 <!-- TODO: Paginate play table data -->
 
-<div class="rounded border border-gray-800 bg-toot-red p-2 text-white">
+<div class="bg-toot-red rounded border border-gray-800 p-2 text-white">
   <p class="m-2 p-2 text-2xl font-bold">{tableName}</p>
   {#if plays.length > 0}
     {#each plays as play}
       <div
-        class="my-4 flex place-items-center rounded border border-gray-800 bg-toot-pale-red p-5 text-center align-middle text-xl drop-shadow-lg"
+        class="bg-toot-pale-red my-4 flex place-items-center rounded border border-gray-800 p-5 text-center align-middle text-xl drop-shadow-lg"
       >
         <div class="w-1/12 text-center">
           <p>{play.grade}</p>
@@ -26,7 +26,7 @@
           <p>{play.percentage.toFixed(2)}%</p>
         </div>
         <div class="w-6/12 text-center">
-          <p class="overflow-hidden text-ellipsis px-2">
+          <p class="overflow-hidden px-2 text-ellipsis">
             <!-- TODO: Have this redirect to the SvelTally version of the song page -->
             <a href="https://toottally.com/song/{play.song_id}/">{play.song_name}</a>
           </p>
@@ -41,6 +41,6 @@
       </div>
     {/each}
   {:else}
-    <p class="p-6 text-center font-title text-2xl">No plays found!</p>
+    <p class="font-title p-6 text-center text-2xl">No plays found!</p>
   {/if}
 </div>

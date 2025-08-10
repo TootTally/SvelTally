@@ -10,7 +10,7 @@
   let { user }: Props = $props();
 </script>
 
-<div class="rounded border border-gray-800 bg-toot-red p-2 text-white">
+<div class="bg-toot-red rounded border border-gray-800 p-2 text-white">
   <div class="my-4 flex flex-col px-2">
     <div class="grid w-full grid-cols-6">
       <div class="col-span-1 grid">

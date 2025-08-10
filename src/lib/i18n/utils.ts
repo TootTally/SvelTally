@@ -1,8 +1,4 @@
-import {
-  baseLocale,
-  isLocale,
-  type Locale
-} from '$lib/paraglide/runtime';
+import { baseLocale, isLocale, type Locale } from '$lib/paraglide/runtime';
 
 /**
  * Takes in a path with or without a language tag and returns the path with the given language tag.

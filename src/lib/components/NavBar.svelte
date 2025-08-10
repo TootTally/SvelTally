@@ -6,8 +6,7 @@
   import { onMount } from 'svelte';
 
   const changeLanguage = (event: Event) => {
-    const newLanguageTag = (event.target as HTMLSelectElement)
-      .value as Locale;
+    const newLanguageTag = (event.target as HTMLSelectElement).value as Locale;
     setLocale(newLanguageTag);
     goto(`/${newLanguageTag}${page.url.pathname.slice(3)}`);
   };
@@ -28,7 +27,7 @@
       <select
         bind:value={currentLanguage}
         onchange={changeLanguage}
-        class="rounded-md border-2 border-white bg-toot-red p-1 uppercase text-white"
+        class="bg-toot-red rounded-md border-2 border-white p-1 text-white uppercase"
       >
         {#each locales as languageTag}
           <option value={languageTag}>{languageTag}</option>

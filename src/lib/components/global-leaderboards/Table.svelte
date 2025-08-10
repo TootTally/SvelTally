@@ -14,12 +14,12 @@
   export let data: TableItem[];
 </script>
 
-<div class="rounded border border-gray-800 bg-toot-red p-2 text-white">
+<div class="bg-toot-red rounded border border-gray-800 p-2 text-white">
   <p class="py-2 text-3xl font-bold">Rankings</p>
   {#if data.length > 0}
     {#each data as user}
       <div
-        class="my-4 flex rounded border border-gray-800 bg-toot-pale-red p-5 text-center text-xl font-bold drop-shadow-lg"
+        class="bg-toot-pale-red my-4 flex rounded border border-gray-800 p-5 text-center text-xl font-bold drop-shadow-lg"
       >
         <div class="flex w-1/12 place-content-center justify-center">
           <p class="place-self-center">#{user.rank}</p>
@@ -44,7 +44,7 @@
         </div>
         <div class="flex w-7/12 place-content-center justify-center">
           <a class="place-self-center" href="/{getLocale()}/profile/{user.id}">
-            <p class="overflow-hidden text-ellipsis px-2">{user.username}</p>
+            <p class="overflow-hidden px-2 text-ellipsis">{user.username}</p>
           </a>
         </div>
         <div class="flex w-2/12 place-content-center justify-center">
@@ -53,6 +53,6 @@
       </div>
     {/each}
   {:else}
-    <p class="p-6 text-center font-title text-2xl">Loading...</p>
+    <p class="font-title p-6 text-center text-2xl">Loading...</p>
   {/if}
 </div>
