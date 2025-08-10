@@ -17,7 +17,7 @@
 <div class="bg-toot-red rounded border border-gray-800 p-2 text-white">
   <p class="py-2 text-3xl font-bold">Rankings</p>
   {#if data.length > 0}
-    {#each data as user}
+    {#each data as user (user.id)}
       <div
         class="bg-toot-pale-red my-4 flex flex-wrap rounded border border-gray-800 p-5 text-center text-xl font-bold drop-shadow-lg"
       >
