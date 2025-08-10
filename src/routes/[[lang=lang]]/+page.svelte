@@ -3,7 +3,7 @@
   import MainLayout from '$lib/components/MainLayout.svelte';
   import Pagination from '$lib/components/Pagination.svelte';
   import Table from '$lib/components/global-leaderboards/Table.svelte';
-  import * as m from '$paraglide/messages';
+  import * as m from '$lib/paraglide/messages';
 
   import type { PageData } from './$types';
 

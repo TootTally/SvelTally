@@ -1,19 +1,15 @@
-import { sourceLanguageTag, type AvailableLanguageTag } from '$paraglide/runtime';
+import type { Handle } from '@sveltejs/kit';
+import { paraglideMiddleware } from '$lib/paraglide/server';
 
-/*
-We set the `lang` and `dir` attributes on the `<html>` element using a hook.
-the `app.html` file contains placeholders for these attributes, which we just find and replace.
-*/
+// creating a handle to use the paraglide middleware
+const paraglideHandle: Handle = ({ event, resolve }) =>
+	paraglideMiddleware(event.request, ({ request: localizedRequest, locale }) => {
+		event.request = localizedRequest;
+		return resolve(event, {
+			transformPageChunk: ({ html }) => {
+				return html.replace('%lang%', locale);
+			}
+		});
+	});
 
-export async function handle({ event, resolve }) {
-  const lang: AvailableLanguageTag =
-    (event.params.lang as AvailableLanguageTag) ?? sourceLanguageTag;
-
-  return await resolve(event, {
-    transformPageChunk({ done, html }) {
-      if (done) {
-        return html.replace('%lang%', lang);
-      }
-    }
-  });
-}
+export const handle: Handle = paraglideHandle;

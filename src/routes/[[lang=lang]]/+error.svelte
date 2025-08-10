@@ -1,6 +1,6 @@
 <script>
   import MainLayout from '$lib/components/MainLayout.svelte';
-  import * as m from '$paraglide/messages';
+  import * as m from '$lib/paraglide/messages';
 </script>
 
 <MainLayout>

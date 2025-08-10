@@ -5,12 +5,12 @@
 -->
 <script lang="ts">
   import { page } from '$app/stores';
-  import { availableLanguageTags } from '$paraglide/runtime';
+  import { locales } from '$lib/paraglide/runtime.js';
   import { translatePath } from './utils.ts';
 </script>
 
 <svelte:head>
-  {#each availableLanguageTags as lang}
+  {#each locales as lang}
     <link rel="alternate" hreflang={lang} href={translatePath($page.url.pathname, lang)} />
   {/each}
 </svelte:head>

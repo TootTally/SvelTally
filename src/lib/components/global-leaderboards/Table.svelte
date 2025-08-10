@@ -1,6 +1,6 @@
 <script lang="ts">
   import { getFlagEmoji } from '$lib/utils/flags';
-  import { languageTag } from '$paraglide/runtime.js';
+  import { getLocale } from '$lib/paraglide/runtime.js';
 
   type TableItem = {
     username: string;
@@ -43,7 +43,7 @@
           {/if}
         </div>
         <div class="flex w-7/12 place-content-center justify-center">
-          <a class="place-self-center" href="/{languageTag()}/profile/{user.id}">
+          <a class="place-self-center" href="/{getLocale()}/profile/{user.id}">
             <p class="overflow-hidden overflow-ellipsis px-2">{user.username}</p>
           </a>
         </div>

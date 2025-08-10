@@ -2,19 +2,19 @@
   import { goto } from '$app/navigation';
   import { page } from '$app/stores';
   import NavBarLink from '$lib/components/NavBarLink.svelte';
-  import { availableLanguageTags, languageTag, setLanguageTag } from '$paraglide/runtime.js';
+  import { type Locale, getLocale, setLocale, locales } from '$lib/paraglide/runtime.js';
   import { onMount } from 'svelte';
 
   const changeLanguage = (event: Event) => {
     const newLanguageTag = (event.target as HTMLSelectElement)
-      .value as (typeof availableLanguageTags)[number];
-    setLanguageTag(newLanguageTag);
+      .value as Locale;
+    setLocale(newLanguageTag);
     goto(`/${newLanguageTag}${$page.url.pathname.slice(3)}`);
   };
 
   let currentLanguage = $state();
   onMount(() => {
-    currentLanguage = languageTag();
+    currentLanguage = getLocale();
   });
 </script>
 
@@ -30,7 +30,7 @@
         onchange={changeLanguage}
         class="rounded-md border-2 border-white bg-toot-red p-1 uppercase text-white"
       >
-        {#each availableLanguageTags as languageTag}
+        {#each locales as languageTag}
           <option value={languageTag}>{languageTag}</option>
         {/each}
       </select>

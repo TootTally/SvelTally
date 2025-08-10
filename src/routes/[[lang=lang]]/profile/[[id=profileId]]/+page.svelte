@@ -2,7 +2,7 @@
   import MainLayout from '$lib/components/MainLayout.svelte';
   import PlayTable from '$lib/components/profile/PlayTable.svelte';
   import ProfileHeader from '$lib/components/profile/ProfileHeader.svelte';
-  import * as m from '$paraglide/messages';
+  import * as m from '$lib/paraglide/messages';
 
   import type { PageData } from './$types';
 
