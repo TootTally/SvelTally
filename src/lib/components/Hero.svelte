@@ -11,7 +11,7 @@
     class="relative z-0 m-auto flex w-full justify-center overflow-hidden md:w-[80vw] md:justify-start"
   >
     <h1
-      class="font-title relative z-10 inline-block px-5 pt-4 pb-2 text-center text-2xl lg:text-5xl leading-none text-black md:ml-5"
+      class="font-title relative z-10 inline-block px-5 pt-4 pb-2 text-center text-2xl leading-none text-black md:ml-5 lg:text-5xl"
     >
       <span class="bg"></span>
       {title}
