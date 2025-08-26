@@ -16,3 +16,5 @@
   --font-title: 'Multicolore';
   --font-sans: 'Noto Sans', sans-serif;
 }
+
+@custom-variant dark (&:where(.dark, .dark *));
