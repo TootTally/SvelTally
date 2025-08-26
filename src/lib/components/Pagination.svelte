@@ -10,7 +10,7 @@
 </script>
 
 <div class="my-4 flex justify-center lg:text-2xl">
-  <div class="flex w-full items-center justify-around rounded bg-white">
+  <div class="flex w-full items-center justify-between rounded bg-gray-900 dark:bg-white">
     <a
       href="?page=1"
       class="font-title rounded-tl-lg rounded-bl-lg bg-gray-900 p-1 text-white hover:underline lg:p-4 dark:bg-white dark:text-gray-900"
