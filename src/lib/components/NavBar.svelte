@@ -2,7 +2,7 @@
   import { goto } from '$app/navigation';
   import { page } from '$app/state';
   import NavBarLink from '$lib/components/NavBarLink.svelte';
-  import { type Locale, getLocale, locales, setLocale } from '$lib/paraglide/runtime.js';
+  import { type Locale, getLocale, locales, setLocale } from '$paraglide/runtime.js';
 
   const changeLanguage = (event: Event) => {
     const newLanguageTag = (event.target as HTMLSelectElement).value as Locale;

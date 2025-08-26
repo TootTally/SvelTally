@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { getLocale } from '$lib/paraglide/runtime.js';
   import { getFlagEmoji } from '$lib/utils/flags';
+  import { getLocale } from '$paraglide/runtime.js';
 
   type TableItem = {
     username: string;

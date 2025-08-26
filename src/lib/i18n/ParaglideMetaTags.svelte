@@ -5,7 +5,7 @@
 -->
 <script lang="ts">
   import { page } from '$app/state';
-  import { locales } from '$lib/paraglide/runtime.js';
+  import { locales } from '$paraglide/runtime.js';
   import { translatePath } from './utils.ts';
 </script>
 
