@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { ProfileScore } from '$lib/types/score';
-  import { languageTag } from '$paraglide/runtime.js';
+  import { getLocale } from '$paraglide/runtime.js';
   import ScoreGrade from '../ScoreGrade.svelte';
 
   interface Props {
@@ -29,7 +29,7 @@
         </div>
         <div class="w-full text-center lg:w-1/2">
           <p class="overflow-hidden p-2 py-4 text-ellipsis">
-            <a href="/{languageTag()}/song/{play.song_id}/">{play.song_name}</a>
+            <a href="/{getLocale()}/song/{play.song_id}/">{play.song_name}</a>
           </p>
         </div>
         <div class="w-1/2 text-center text-sm lg:w-2/12">
