@@ -1,18 +1,14 @@
-import {
-  sourceLanguageTag,
-  availableLanguageTags,
-  type AvailableLanguageTag
-} from '$paraglide/runtime';
+import { baseLocale, isLocale, type Locale } from '$paraglide/runtime';
 
 /**
  * Takes in a path with or without a language tag and returns the path with the given language tag.
  * @returns
  */
-export function translatePath(path: string, lang: AvailableLanguageTag) {
+export function translatePath(path: string, lang: Locale) {
   path = getPathWithoutLang(path);
 
   //Don't prefix with the source language tag, that's the default
-  if (lang === sourceLanguageTag) return path;
+  if (lang === baseLocale) return path;
   //Otherwise, prefix with the language tag
   else return `/${lang}${path}`;
 }
@@ -22,7 +18,7 @@ export function translatePath(path: string, lang: AvailableLanguageTag) {
  */
 function getPathWithoutLang(path: string) {
   const [_, maybeLang, ...rest] = path.split('/');
-  if (availableLanguageTags.includes(maybeLang as any)) return `/${rest.join('/')}`;
+  if (isLocale(maybeLang as any)) return `/${rest.join('/')}`;
   else return path;
 }
 

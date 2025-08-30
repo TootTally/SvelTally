@@ -15,7 +15,7 @@
 
 <MainLayout>
   {#await data.promises.query}
-    <p class="p-8 text-center font-title text-2xl">{m.loading()}</p>
+    <p class="font-title p-8 text-center text-2xl">{m.loading()}</p>
   {:then resolvedData}
     <ProfileHeader user={resolvedData[0]} />
 

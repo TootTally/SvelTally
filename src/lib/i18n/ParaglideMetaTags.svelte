@@ -4,13 +4,13 @@
     This is vital for SEO.
 -->
 <script lang="ts">
-  import { page } from '$app/stores';
-  import { availableLanguageTags } from '$paraglide/runtime';
+  import { page } from '$app/state';
+  import { locales } from '$paraglide/runtime.js';
   import { translatePath } from './utils.ts';
 </script>
 
 <svelte:head>
-  {#each availableLanguageTags as lang}
-    <link rel="alternate" hreflang={lang} href={translatePath($page.url.pathname, lang)} />
+  {#each locales as lang}
+    <link rel="alternate" hreflang={lang} href={translatePath(page.url.pathname, lang)} />
   {/each}
 </svelte:head>

@@ -15,6 +15,7 @@ const config = {
       fallback: '404.html' // may differ from host to host,
     }),
     alias: {
+      '@': './src',
       $paraglide: './src/paraglide/'
     },
 

@@ -6,12 +6,12 @@
   let { title }: Props = $props();
 </script>
 
-<div class="flex bg-gradient-to-br from-blue-600 to-pink-700 py-16">
+<div class="flex bg-linear-to-br from-blue-600 to-pink-700 py-4 lg:py-16">
   <div
     class="relative z-0 m-auto flex w-full justify-center overflow-hidden md:w-[80vw] md:justify-start"
   >
     <h1
-      class="relative z-10 inline-block px-5 pb-2 pt-4 text-center font-title text-5xl leading-none text-black md:ml-5"
+      class="font-title relative z-10 inline-block px-5 pt-4 pb-2 text-center text-2xl leading-none text-black md:ml-5 lg:text-5xl"
     >
       <span class="bg"></span>
       {title}
@@ -20,6 +20,7 @@
 </div>
 
 <style lang="postcss">
+  @reference '@/app.css';
   .font-title {
     text-shadow:
       3px 0 #fff,
@@ -34,7 +35,7 @@
   }
 
   .bg {
-    @apply absolute left-0 top-0 h-full w-full bg-blue-900 bg-opacity-50;
+    @apply absolute top-0 left-0 h-full w-full bg-blue-900/50;
     z-index: -1;
     height: 100%;
     transform: skewX(-30deg);

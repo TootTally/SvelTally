@@ -1,8 +1,20 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import 'tailwindcss';
 
 @font-face {
   font-family: 'Multicolore';
   src: url('/Multicolore.otf');
 }
+
+@theme {
+  --color-toot-blue: #00e6e4;
+  --color-toot-orange: #f5a506;
+  --color-toot-yellow: #f8e71c;
+  --color-toot-red: #e13453;
+  --color-toot-pale-red: #e05e75;
+
+  --font-title: 'Multicolore';
+  --font-sans: 'Noto Sans', sans-serif;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));

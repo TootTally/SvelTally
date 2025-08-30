@@ -1,2 +1,2 @@
-import { isAvailableLanguageTag } from '$paraglide/runtime';
-export const match = isAvailableLanguageTag;
+import { locales, type Locale } from '$paraglide/runtime';
+export const match = (param) => locales.includes(param as Locale);

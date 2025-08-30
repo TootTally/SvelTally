@@ -10,25 +10,25 @@
   let { user }: Props = $props();
 </script>
 
-<div class="rounded border border-gray-800 bg-toot-red p-2 text-white">
+<div class="bg-toot-red rounded border border-gray-800 p-2 text-white">
   <div class="my-4 flex flex-col px-2">
-    <div class="grid w-full grid-cols-6">
+    <div class="grid w-full grid-cols-6 gap-4">
       <div class="col-span-1 grid">
         {#if user.picture}
           <img
-            class="h-40 w-40 rounded-full border object-fill"
+            class="aspect-square max-h-40 w-full rounded-full border object-cover"
             src={user.picture}
             alt={`${user.username}'s avatar`}
           />
         {:else}
           <img
-            class="h-40 w-40 rounded-full border border-gray-900 object-fill p-1"
+            class="aspect-square rounded-full border border-gray-900"
             src="/tt_logo.svg"
             alt={`${user.username}'s avatar`}
           />
         {/if}
       </div>
-      <div class="col-span-5 grid content-start">
+      <div class="col-span-5 grid px-4">
         <p class="py-2 text-3xl font-bold">
           {getFlagEmoji(user.country)}
           {user.username} (#{user.rank})
