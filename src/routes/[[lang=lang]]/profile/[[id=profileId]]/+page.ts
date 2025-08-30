@@ -1,24 +1,25 @@
 import type { PageLoad } from './$types';
-import { PUBLIC_API_URL } from '$env/static/public';
-import type { ProfileBaseResponse } from '$lib/types/profile';
-import type { APIScoreResponse } from '$lib/types/score';
+import { getProfile, getRecentScores, getBestScores } from '$lib/api/profile';
 
-export const load: PageLoad = ({ params, fetch }) => {
-  const profile: Promise<ProfileBaseResponse> = fetch(
-    `${PUBLIC_API_URL}/profile/${params.id}/`
-  ).then((res) => res.json());
+export const load: PageLoad = ({ params }) => {
+  let profileId = Number(params.id);
 
-  const recentScores: Promise<APIScoreResponse> = fetch(
-    `${PUBLIC_API_URL}/profile/${params.id}/recent_scores/`
-  ).then((res) => res.json());
+  if (profileId === 0 || profileId <= 0) {
+    console.error("Invalid profile ID");
+    return {
+      promises: {
+        query: Promise.all([]),
+      }
+    };
+  }
 
-  const bestScores: Promise<APIScoreResponse> = fetch(
-    `${PUBLIC_API_URL}/profile/${params.id}/best_scores/`
-  ).then((res) => res.json());
+  const profile = getProfile(profileId);
+  const recentScores = getRecentScores(profileId);
+  const bestScores = getBestScores(profileId);
 
   return {
     promises: {
-      query: Promise.all([profile, recentScores, bestScores])
+      query: Promise.all([profile, recentScores, bestScores]),
     },
     lang: params.lang
   };

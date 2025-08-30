@@ -1,10 +1,10 @@
 <script lang="ts">
-  import type { ProfileBaseResponse } from '$lib/types/profile';
+  import type { Profile } from '$lib/types/profile';
   import { getFlagEmoji } from '$lib/utils/flags';
   import Badge from './Badge.svelte';
 
   interface Props {
-    user: ProfileBaseResponse;
+    user: Profile;
   }
 
   let { user }: Props = $props();
